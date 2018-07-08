@@ -12,10 +12,5 @@ app.use(express.static(__dirname + "/public"));
 app.use('/', indexRouter);
 app.use('/users', userRouter);
 
-// New restaurant registration route
-app.get('/restaurant', function (req, res) {
-    console.log("restaurant page");
-    res.render("restaurant");
-});
 
 app.listen(process.env.PORT, () => console.log(`listening ${process.env.PORT}`));

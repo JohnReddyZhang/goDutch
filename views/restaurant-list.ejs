@@ -1,0 +1,21 @@
+<% include ./partials/header %>
+
+<div class="jumbotron">
+    <div class="container"><h1>This is a restaurant-list</h1></div>
+</div>
+
+<div class="row">
+    <ul>
+        <% restaurants.forEach(function (restaurant){ %>
+        <li>
+            <ul>
+                <li><%= restaurant.name %></li>
+                <li><%= restaurant.location %></li>
+                <li><%= restaurant.rating %></li>
+            </ul>
+        </li>
+        <% }) %>
+    </ul>
+
+</div>
+<% include ./partials/footer %>
