@@ -1,21 +1,45 @@
 <% include ./partials/header %>
 
-<div class="jumbotron">
-    <div class="container"><h1>This is a restaurant-list</h1></div>
-</div>
+<!--Custom Stylesheet for browsing restaurant page-->
 
-<div class="row">
-    <ul>
-        <% restaurants.forEach(function (restaurant){ %>
-        <li>
-            <ul>
-                <li><%= restaurant.name %></li>
-                <li><%= restaurant.location %></li>
-                <li><%= restaurant.rating %></li>
-            </ul>
-        </li>
-        <% }) %>
-    </ul>
+<header class="masthead">
+    <div class="container">
+        <div class="jumbotron">
+            <div class="container"><h1>Our Participating Restaurants</h1></div>
+        </div>
+        <hr>
 
-</div>
+        <section class="p-0" id="portfolio">
+            <div class="container-fluid p-0">
+                <div class="row no-gutters">
+                    <% restaurants.forEach(function (restaurant){ %>
+                    <div class="col-lg-4 col-sm-6">
+                        <!--TODO: Link to the target restaurant, not new -->
+                        <a class="portfolio-box" href="\new">
+                            <img class="img-fluid" src="img/portfolio/thumbnails/chicago.png" alt="">
+                            <div class="portfolio-box-caption">
+                                <div class="portfolio-box-caption-content">
+                                    <div class="project-name">
+                                        <%= restaurant.name %>
+                                    </div>
+                                    <div class="project-category text-faded">
+                                        <%= restaurant.location %>
+                                    </div>
+                                    <div class="project-category text-faded">
+                                        <%= restaurant.rating %>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <% }) %>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+</header>
+
+
 <% include ./partials/footer %>
