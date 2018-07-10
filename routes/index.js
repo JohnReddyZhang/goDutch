@@ -13,8 +13,8 @@ router.get('/session', function (req, res) {
     res.render('session');
 });
 
-router.get('/restaurant-owner', function (req, res) {
-    res.render('restaurant-owner')
+router.get('/restaurant-join', function (req, res) {
+    res.render('restaurant-join')
 });
 
 
