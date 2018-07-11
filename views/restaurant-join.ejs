@@ -1,14 +1,8 @@
 <% include ./partials/header %>
-
+<!--TODO: Figure out why logo width is wrong in this page and session page.-->
 <header class="masthead text-center text-white d-flex">
     <div class="container my-auto">
         <div class="row">
-
-            <style>
-
-            </style>
-
-
             <div class="container">
 
                 <!-- CSS -->
@@ -39,7 +33,6 @@
                     <div class="col-sm-3">
                     </div>
                     <div class="col-sm-6" style="opacity: 0.98">
-
                         <div class="form-box">
                             <div class="form-top">
                                 <div class="form-top-left">
@@ -51,7 +44,8 @@
                                 </div>
                             </div>
                             <div class="form-bottom">
-                                <form role="form" action="/users" method="post" class="login-form">
+                                <!--TODO: Reformat all names -->
+                                <form role="form" action="/restaurant-list" method="post" class="login-form">
                                     <div class="form-group">
                                         <label class="sr-only" for="form-name">Restaurant Name</label>
                                         <input type="text" name="form-name"
@@ -88,14 +82,8 @@
                             </div>
                         </div>
                     </div>
-
-                    <div class="col-sm-3">
-                    </div>
                 </div>
-
             </div>
-
-
         </div>
     </div>
 </header>

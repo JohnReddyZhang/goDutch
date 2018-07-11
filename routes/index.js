@@ -18,19 +18,48 @@ router.get('/restaurant-join', function (req, res) {
 });
 
 
+// TODO: Add this to a db
+// Restaurant List, for displaying all restaurants.
+let restaurants = [
+    {name: "Five Star Gourmet", location: "1 N Michigan Ave", rating: "5"},
+    {name: "Local Grow Best", location: "500 Wabash Ave", rating: "4.5"},
+    {name: "Five Star Gourmet", location: "1 N Michigan Ave", rating: "5"},
+    {name: "Local Grow Best", location: "500 Wabash Ave", rating: "4.5"},
+    {name: "Five Star Gourmet", location: "1 N Michigan Ave", rating: "5"},
+    {name: "Local Grow Best", location: "500 Wabash Ave", rating: "4.5"},
+    {name: "Five Star Gourmet", location: "1 N Michigan Ave", rating: "5"},
+    {name: "Local Grow Best", location: "500 Wabash Ave", rating: "4.5"},
+    {name: "Five Star Gourmet", location: "1 N Michigan Ave", rating: "5"},
+    {name: "Local Grow Best", location: "500 Wabash Ave", rating: "4.5"},
+    {name: "Five Star Gourmet", location: "1 N Michigan Ave", rating: "5"},
+    {name: "Local Grow Best", location: "500 Wabash Ave", rating: "4.5"},
+    {name: "Five Star Gourmet", location: "1 N Michigan Ave", rating: "5"},
+    {name: "Local Grow Best", location: "500 Wabash Ave", rating: "4.5"},
+    {name: "Five Star Gourmet", location: "1 N Michigan Ave", rating: "5"},
+    {name: "Local Grow Best", location: "500 Wabash Ave", rating: "4.5"},
+    {name: "Five Star Gourmet", location: "1 N Michigan Ave", rating: "5"},
+    {name: "Local Grow Best", location: "500 Wabash Ave", rating: "4.5"},
+    {name: "Five Star Gourmet", location: "1 N Michigan Ave", rating: "5"},
+    {name: "Local Grow Best", location: "500 Wabash Ave", rating: "4.5"},
+    {name: "Five Star Gourmet", location: "1 N Michigan Ave", rating: "5"},
+    {name: "Local Grow Best", location: "500 Wabash Ave", rating: "4.5"},
+    {name: "Five Star Gourmet", location: "1 N Michigan Ave", rating: "5"},
+    {name: "Local Grow Best", location: "500 Wabash Ave", rating: "4.5"},
+    {name: "Five Star Gourmet", location: "1 N Michigan Ave", rating: "5"},
+    {name: "Local Grow Best", location: "500 Wabash Ave", rating: "4.5"},
+    {name: "Five Star Gourmet", location: "1 N Michigan Ave", rating: "5"},
+    {name: "Local Grow Best", location: "500 Wabash Ave", rating: "4.5"}
+];
+
+router.get('/restaurant-list', function (req, res) {
+
+    res.render('restaurant-list', {restaurants: restaurants});
+});
+
 // New restaurant registration route
 router.get('/restaurant', function (req, res) {
     console.log("restaurant page");
     res.render("restaurant");
-});
-
-// Restaurant List, for displaying all restaurants.
-router.get('/restaurant-list', function (req, res) {
-    let restaurants = [
-        {name: "Five Star Gourmet", location: "1 N Michigan Ave", rating: "5"},
-        {name: "Local Grow Best", location: "500 Wabash Ave", rating: "4.5"}
-    ];
-    res.render('restaurant-list', {restaurants: restaurants});
 });
 
 console.log("index.js is loading");
