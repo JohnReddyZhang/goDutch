@@ -46,36 +46,63 @@
                             <div class="form-bottom">
                                 <!--TODO: Reformat all names -->
                                 <form role="form" action="/restaurant-list" method="post" class="login-form">
+                                    <!--Restaurant Name-->
                                     <div class="form-group">
-                                        <label class="sr-only" for="form-name">Restaurant Name</label>
-                                        <input type="text" name="form-name"
+                                        <label class="sr-only" for="restaurant-name">Restaurant Name</label>
+                                        <input type="text" name="restaurant[restaurant-name"
                                                placeholder="We need the name of your restaurant..."
-                                               class="form-username form-control" id="form-username">
+                                               class="form-control" id="restaurant-name">
                                     </div>
+                                    <!--Table number, for setting up reservation-->
                                     <div class="form-group">
-                                        <label class="sr-only" for="form-table">Tables</label>
-                                        <input type="number" name="form-table" placeholder="How many tables you have?"
-                                               class="form-password form-control" id="form-table">
+                                        <label class="sr-only" for="table">Tables</label>
+                                        <input type="number" name="restaurant[table]"
+                                               placeholder="How many tables you have?"
+                                               class="form-control" id="table">
                                     </div>
+                                    <!--Restaurant location-->
                                     <div class="form-group">
-                                        <label class="sr-only" for="form-address">Address</label>
-                                        <input type="text" name="form-address" placeholder="Where are you located?"
-                                               class="form-password form-control" id="form-address">
+                                        <label class="sr-only" for="address">Address</label>
+                                        <input type="text" name="restaurant[address]"
+                                               placeholder="Where are you located?"
+                                               class="form-control" id="address">
                                     </div>
-                                    <div class="form-group">
-                                        <label class="sr-only" for="form-first-name">First Name</label>
-                                        <input type="text" name="form-first-name" placeholder="First name"
-                                               class="form-control" id="form-first-name">
+                                    <div class="form-row form-group">
+                                        <!--first name-->
+                                        <div class="col">
+                                            <label class="sr-only" for="first-name">First Name</label>
+                                            <input type="text" name="restaurant[first-name]" placeholder="First name"
+                                                   class="form-control" id="first-name">
+                                        </div>
+                                        <!--last name-->
+                                        <div class="col">
+                                            <label class="sr-only" for="last-name">Last Name</label>
+                                            <input type="text" name="restaurant[last-name]" placeholder="Last name"
+                                                   class="form-control" id="last-name">
+                                        </div>
                                     </div>
+                                    <!-- Contact Email / username -->
                                     <div class="form-group">
-                                        <label class="sr-only" for="form-last-name">First Name</label>
-                                        <input type="text" name="form-last-name" placeholder="Last name"
-                                               class="form-control" id="form-last-name">
+                                        <label class="sr-only" for="username">Your Email</label>
+                                        <input type="email" name="restaurant[username]"
+                                               placeholder="Your Email..."
+                                               class="form-control" id="username">
                                     </div>
+                                    <!--Phone Number-->
+                                    <!--TODO: Validation-->
                                     <div class="form-group">
-                                        <label class="btn" for="form-floor-plan" style="color: #29b6e0">Do you have a
+                                        <label class="sr-only" for="restaurant-name">Restaurant Name</label>
+                                        <input type="text" name="restaurant[restaurant-name]"
+                                               placeholder="We need the name of your restaurant..."
+                                               class="form-control" id="restaurant-name">
+                                    </div>
+                                    <!--floor plan-->
+                                    <!--TODO: How to store files? -->
+                                    <div class="form-group">
+                                        <label class="btn" for="floor-plan" style="color: #29b6e0">Do you have a
                                             floor plan for your restaurant? <br>Upload here!</label>
-                                        <input type="file" name="form-floor-plan" id="form-floor-plan" hidden>
+                                        <input class="form-control-file" type="file" name="restaurant[floor-plan]"
+                                               id="floor-plan" hidden>
                                     </div>
                                     <button type="submit" class="btn">Done!</button>
                                 </form>
