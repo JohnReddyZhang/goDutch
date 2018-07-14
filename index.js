@@ -2,8 +2,9 @@ const path = require('path');
 const express = require('express');
 const app = express();
 const indexRouter = require('./routes/index');
-const userRouter = require('./routes/users');
+// const userRouter = require('./routes/users'); // Not used.
 const restaurantRouter = require('./routes/restaurant');
+const userRouter = require('./routes/user');
 
 const bodyParser = require('body-parser');
 
@@ -16,7 +17,7 @@ app.use(express.static(__dirname + "/public"));
 //app.use(express.static("/public"));
 app.use('/', indexRouter);
 app.use('/', restaurantRouter);
-app.use('/session', userRouter);
+app.use('/', userRouter);
 
 
 app.listen(process.env.PORT, () => console.log(`listening ${process.env.PORT}`));

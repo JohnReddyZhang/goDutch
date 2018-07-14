@@ -13,8 +13,8 @@ router.get('/session', function (req, res) {
     res.render('session');
 });
 
-router.get('/restaurant-join', function (req, res) {
-    res.render('restaurant-join')
+router.get('/restaurants/join', function (req, res) {
+    res.render('restaurant-join');
 });
 
 
@@ -51,16 +51,17 @@ let restaurants = [
     {name: "Local Grow Best", location: "500 Wabash Ave", rating: "4.5"}
 ];
 
-router.get('/restaurant-list', function (req, res) {
-
+// Index Route - Restaurant
+router.get('/restaurants', function (req, res) {
     res.render('restaurant-list', {restaurants: restaurants});
 });
 
-// New restaurant registration route
-router.get('/restaurant', function (req, res) {
-    console.log("restaurant page");
-    res.render("restaurant");
-});
+// Deprecated
+// // New restaurant registration route
+// router.get('/restaurant', function (req, res) {
+//     console.log("restaurant page");
+//     res.render("restaurant");
+// });
 
 console.log("index.js is loading");
 module.exports = router;
