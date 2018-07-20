@@ -34,7 +34,7 @@
                     <% restaurants.forEach(function (restaurant){ %>
                     <div class="col-lg-4 col-sm-6 p-1">
                         <!--TODO: Link to the target restaurant, not new-->
-                        <a class="restaurant-box" href="\new">
+                        <a class="restaurant-box" href="/restaurants/<%= restaurant._id %>">
                             <img class="img-fluid" src="img/portfolio/thumbnails/chicago.png" alt="">
                             <div class="restaurant-box-caption">
                                 <div class="restaurant-box-caption-content">
@@ -42,7 +42,7 @@
                                         <%= restaurant.name %>
                                     </div>
                                     <div class="project-category text-faded">
-                                        <%= restaurant.location %>
+                                        <%= restaurant.address %>
                                     </div>
                                     <div class="project-category text-faded">
                                         <%= restaurant.rating %>
