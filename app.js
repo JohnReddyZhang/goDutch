@@ -16,31 +16,9 @@ app.use(methodOverride("_method"));
 
 mongoose.connect("mongodb://localhost:27017/restaurants", {useNewUrlParser: true});
 
-let restaurantInfoSchema = new mongoose.Schema({
-    name: String,
-    tableCount: Number,
-    address: String,
-    firstName: String,
-    lastName: String,
-    username: mongoose.SchemaTypes.Email
-});
 
-let restaurantInfo = mongoose.model('Restaurant', restaurantInfoSchema);
-//
-// restaurantInfo.create({
-//     name: "Good Food",
-//     tableCount: 20,
-//     address: "7527 Back St, Chicago",
-//     firstName: "Ben",
-//     lastName: "Andrew",
-//     username: "badrew@me.com"
-// }, function (err, restaurant) {
-//     if(err){
-//         console.log("Error: "+ err)
-//     } else {
-//         console.log(restaurant)
-//     }
-// });
+// Models
+const restaurantInfo = require('./models/restaurant');
 
 // Routers
 const indexRouter = require('./routes/index');
@@ -53,45 +31,46 @@ app.use(indexRouter);
 app.use(restaurantRouter);
 app.use(userRouter);
 
-// TODO: Refactor back to restaurant.js
-// Moved to restaurant.js (not yet)
-// Index Route - Restaurant
-app.get('/restaurants', function (req, res) {
-    restaurantInfo.find({}, function (err, allRestaurants) {
-        if (err) {
-            console.log("Error!" + err);
-        } else {
-            res.render('restaurant-index', {restaurants: allRestaurants});
-        }
-    });
-});
 
-// Create Route - restaurant
-app.post('/restaurants', function (req, res) {
-    console.log("Received a post request for new restaurant.");
-    console.log(req.body.restaurant);
-    //TODO: Need phone number & floor plan (file)
-    restaurantInfo.create(req.body.restaurant, function (err, newRest) {
-        if (err) {
-            console.log("ERROR:\n" + err)
-        } else {
-            res.render("restaurant-success", {restaurant: newRest});
-        }
-    });
-});
-
-// Show Route - restaurant
-app.get('/restaurants/:id', function (req, res) {
-    restaurantInfo.findById(req.params.id, function (err, restaurantFound) {
-        if (err) {
-            console.log(err);
-            res.redirect('/restaurants')
-        } else {
-            res.render('restaurant-show', {restaurant: restaurantFound});
-        }
-    });
-
-});
+// // TODO: Refactor back to restaurant.js
+// // Moved to restaurant.js (not yet)
+// // Index Route - Restaurant
+// app.get('/restaurants', function (req, res) {
+//     restaurantInfo.find({}, function (err, allRestaurants) {
+//         if (err) {
+//             console.log("Error!" + err);
+//         } else {
+//             res.render('restaurant-index', {restaurants: allRestaurants});
+//         }
+//     });
+// });
+//
+// // Create Route - restaurant
+// app.post('/restaurants', function (req, res) {
+//     console.log("Received a post request for new restaurant.");
+//     console.log(req.body.restaurant);
+//     //TODO: Need phone number & floor plan (file)
+//     restaurantInfo.create(req.body.restaurant, function (err, newRest) {
+//         if (err) {
+//             console.log("ERROR:\n" + err)
+//         } else {
+//             res.render("restaurant-success", {restaurant: newRest});
+//         }
+//     });
+// });
+//
+// // Show Route - restaurant
+// app.get('/restaurants/:id', function (req, res) {
+//     restaurantInfo.findById(req.params.id, function (err, restaurantFound) {
+//         if (err) {
+//             console.log(err);
+//             res.redirect('/restaurants')
+//         } else {
+//             res.render('restaurant-show', {restaurant: restaurantFound});
+//         }
+//     });
+//
+// });
 
 
 app.listen(process.env.PORT, () => console.log(`listening ${process.env.PORT}`));
