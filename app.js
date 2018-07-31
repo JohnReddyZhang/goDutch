@@ -20,11 +20,13 @@ mongoose.connect("mongodb://localhost:27017/restaurants", {useNewUrlParser: true
 const indexRouter = require('./routes/index');
 // const userRouter = require('./routes/users'); // Not used.
 const restaurantRouter = require('./routes/restaurant');
+const menuRouter = require('./routes/menu');
 const userRouter = require('./routes/user');
 
 //app.use(express.static("/public"));
 app.use(indexRouter);
 app.use(restaurantRouter);
+app.use(menuRouter);
 app.use(userRouter);
 
 

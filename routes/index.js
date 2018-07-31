@@ -13,10 +13,6 @@ router.get('/session', function (req, res) {
     res.render('session');
 });
 
-router.get('/restaurants/join', function (req, res) {
-    res.render('restaurant-join');
-});
-
 
 // // TODO: Add this to a db
 // // Restaurant List, for displaying all restaurants.

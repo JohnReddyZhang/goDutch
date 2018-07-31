@@ -1,6 +1,6 @@
 const express = require('express'),
-    mongoose = require('mongoose'),
     router = express.Router();
+
 let restaurantInfo = require('../models/restaurant.js');
 require('mongoose-type-email');
 
@@ -11,19 +11,19 @@ router.get('/restaurants', function (req, res) {
         if (err) {
             console.log("Error!" + err);
         } else {
-            res.render('restaurant-index', {restaurants: allRestaurants});
+            res.render('restaurant/restaurant-index', {restaurants: allRestaurants});
         }
     });
 });
 
 // New Route - restaurant
 router.get('/restaurants/join', function (req, res) {
-    res.render('restaurant-join');
+    res.render('restaurant/restaurant-join');
 });
 
 // Success Page
 router.get('/restaurants/success', function (req, res) {
-    res.render('restaurant-success');
+    res.render('restaurant/restaurant-success');
 });
 
 // Create Route - restaurant
@@ -35,7 +35,7 @@ router.post('/restaurants', function (req, res) {
         if (err) {
             console.log("ERROR:\n" + err)
         } else {
-            res.render("restaurant-success", {restaurant: newRest});
+            res.render("restaurant/restaurant-success", {restaurant: newRest});
         }
     });
 });
@@ -47,7 +47,7 @@ router.get('/restaurants/:id', function (req, res) {
             console.log(err);
             res.redirect('/restaurants')
         } else {
-            res.render('restaurant-show', {restaurant: restaurantFound});
+            res.render('restaurant/restaurant-show', {restaurant: restaurantFound});
         }
     });
 
