@@ -18,3 +18,14 @@
     font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
     color: white;
 }
+
+#menu-items h1 {
+    font-family: 'Merriweather', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: bolder;
+    color: white;
+}
+
+.list-group-item {
+    color: black;
+    font-size: small;
+}

@@ -1,6 +1,7 @@
 const express = require('express'),
     router = express.Router();
 
+let dish = require('../models/dish.js');
 let restaurantInfo = require('../models/restaurant.js');
 require('mongoose-type-email');
 
@@ -42,15 +43,15 @@ router.post('/restaurants', function (req, res) {
 
 // Show Route - restaurant
 router.get('/restaurants/:id', function (req, res) {
-    restaurantInfo.findById(req.params.id, function (err, restaurantFound) {
+    restaurantInfo.findById(req.params.id).populate('dishes').exec(function (err, restaurantFound) {
         if (err) {
             console.log(err);
             res.redirect('/restaurants')
         } else {
+            console.log(restaurantFound);
             res.render('restaurant/restaurant-show', {restaurant: restaurantFound});
         }
     });
-
 });
 
 module.exports = router;

@@ -23,12 +23,50 @@
             <!--<h4 class="text-uppercase">-->
             <!--<strong>Point of Sale Reimagined</strong>-->
             <!--</h4>-->
-            <a class="btn btn-primary btn-xl js-scroll-trigger" href="/menu">Edit Menu for <%= restaurant.name %></a>
+            <a class="btn btn-primary btn-xl js-scroll-trigger" href="/restaurants/<%= restaurant._id %>/dish/new">
+                Edit Menu for <%= restaurant.name %>
+            </a>
         </div>
-    </div>
     </div>
 </header>
 
+<br>
+
+
+<section id="menu-items" class="bg-primary p-0">
+    <div class="container p-3">
+        <div class="row pb-3">
+            <h1 class="col text-center">
+                Menu
+            </h1>
+        </div>
+        <div class="row">
+            <div class="col-3 text-solid">
+                <p class="lead">Types</p>
+                <ul class="list-group">
+                    <li class="list-group-item">Entree</li>
+                    <li class="list-group-item">Appetizer</li>
+                    <li class="list-group-item">Dessert</li>
+                    <li class="list-group-item">This will be active</li>
+                    <!--TODO: This will be active-->
+                </ul>
+            </div>
+            <div class="col-9 text-solid">
+                <!--TODO: To be reformatted -->
+                <% restaurant.dishes.forEach(function (dish) { %>
+                <h4><%= dish.name %> <span class="pull-right"><%= dish.price %></span></h4>
+                <p> <%= dish.description %> Lorem ipsum dolor sit amet, consectetur adipisicing elit. At cupiditate
+                    dicta dolore dolorum eius enim eos, est excepturi, facilis itaque laboriosam neque nisi odio odit
+                    officiis quasi sit unde voluptas?
+                </p>
+                <% }) %>
+            </div>
+        </div>
+    </div>
+</section>
+<div>
+
+</div>
 <!-- Bootstrap core JavaScript -->
 <script src="/vendor/jquery/jquery.min.js"></script>
 <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

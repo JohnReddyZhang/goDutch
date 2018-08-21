@@ -8,7 +8,9 @@ let restaurantInfoSchema = new mongoose.Schema({
     firstName: String,
     lastName: String,
     username: mongoose.SchemaTypes.Email,
-    menu: {type: mongoose.Schema.Types.ObjectId, ref: "menu"}
+    dishes: [
+        {type: mongoose.Schema.Types.ObjectId, ref: "Dish"}
+    ]
 });
 
 let restaurantInfo = mongoose.model('Restaurant', restaurantInfoSchema);
